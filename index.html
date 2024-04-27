@@ -5,54 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- font awesome icon cdn  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
     <header>
-      <nav>
+      <nav class="container">
         <div class="left-container">
-          <div class="title">BIKE-RENT</div>
+          <a href="#" class="title">BIKE-RENT</a>
         </div>
-        <ul>
+        <ul class="desktop-page-links">
           <li>HOME</li>
           <li>BIKES</li>
           <li>DESTINATION</li>
           <li>REVIEWS</li>
         </ul>
         <div class="right-container">
-          <div class="sign-up-btn">SIGN UP</div>
+          <button class="sign-up-btn sign-up-btn-desktop">SIGN UP</button>
         </div>
       </nav>
     </header>
+
+    <div class="hamburger-icon">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+
+    <section class="sidebar">
+      <ul class="mobile-page-links">
+        <li>HOME</li>
+        <li>BIKES</li>
+        <li>DESTINATION</li>
+        <li>REVIEWS</li>
+      </ul>
+      <button class="sign-up-btn">SIGN UP</button>
+    </section>
+
     <section class="home-section">
-      <div class="home-section-content">
-        < HOME SECTION >
+      <div class="home-section-content container">
+       <div class="harley-title">
+        <div>Harley Davidson</div>
+      </div>
+       <div class="home-bike-container">
+        <div class="left-info-container">
+          <div class="box-info border-seperator">
+            <div>Electric Motor</div>
+            <div class="spec-info">REVELATION</div>
+          </div>
+          <div class="box-info border-seperator">
+            <div>Torque</div>
+            <div class="spec-info">86 FT-LB</div>
+          </div>
+          <div class="box-info">
+            <div>Horsepower</div>
+            <div class="spec-info">105 HP / X78 KW</div>
+          </div>
+        </div>
+        <img src="images/home.png" class="bike-image">
+        <div class="helmet-container">
+          <img src="images/helmet.png">
+          <button class="helmet-btn">
+            <div>HELMET</div>
+            <i class="ri-arrow-right-up-line"></i>
+          </button>
+        </div>
+       </div>
+       <div class="home-btn-container">
+        <button class="find-dealer-btn">
+          <i class="ri-compass-line"></i>
+          <div>FIND A DEALER</div>
+        </button>
+        <button class="test-ride-btn">
+          <i class="ri-bike-line"></i>
+          <div>TEST A RIDE</div>
+        </button>
+       </div>
       </div>
     </section>
+    
     <section class="bikes-section">
-      <div class="bikes-section-content">
+      <div class="bikes-section-content container">
         < BIKES SECTION >
       </div>
     </section>
     <section class="destination-section">
-      <div class="destination-section-content">
+      <div class="destination-section-content container">
         < DESTINATION SECTION >
       </div>
     </section>
     <section class="reviews-section">
-      <div class="reviews-section-content">
+      <div class="reviews-section-content container">
         < REVIEWS SECTION >
       </div>
     </section>
     <footer>
-      < footer >
+       footer >
     </footer>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>

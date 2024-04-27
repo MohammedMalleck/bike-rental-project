@@ -7,6 +7,8 @@
   --bg-color:rgb(251,239,229);
   --main-color:rgb(255, 68, 36);
   --second-color:rgb(247, 114, 20);
+  --main-border:rgb(234, 220, 209);
+  --yellow-btn-color:rgb(255,231,37);
 }
 html{
   font-size: 62.5%;
@@ -15,12 +17,20 @@ body{
   font-family:Roboto;
   font-size: 1.6rem;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 main{
   display: grid;
   grid-template-columns: 1fr;
 }
+.container{
+  max-width:100rem;
+  margin: 0 2.5rem;
+}
 header{
-  position:sticky;
+  position:fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -28,13 +38,14 @@ header{
   height:5rem;
   display: flex;
   justify-content: center;
+  z-index: 100;
 }
 nav{
   flex: 1;
-  max-width: 70rem;
+  height: 100%;
   display: flex;
   align-items: center;
-  border-bottom: 0.25rem solid rgb(243,231,221);
+  border-bottom: 0.25rem solid var(--main-border);
 }
 .left-container{
   flex: 1;
@@ -49,7 +60,7 @@ nav{
   cursor:default;
   height: 2.2rem;
   width:8.3rem;
-  font-size: 1.53rem;
+  font-size: 1.55rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,15 +94,67 @@ ul li:hover{
   display:flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   cursor:pointer;
 }
 .sign-up-btn:hover{
   filter: brightness(90%);
 }
+/*mobile hamburger icon*/
+.hamburger-icon{
+  position:fixed;
+  top:15px;
+  right: 25px;
+  height: 1.6rem;
+  width: 2rem;
+  display:none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index:102;
+}
+.line{
+  width:100%;
+  height: 0.2rem;
+  background-color: black;
+  transition: transform 0.5s ease , opacity 0.3s ease;
+}
+.hamburger-icon.clicked .line-1{
+  transform: rotate(-45deg) translate(-30%,200%);
+}
+.hamburger-icon.clicked .line-2{
+  opacity: 0;
+}
+.hamburger-icon.clicked .line-3{
+  transform: rotate(45deg) translate(-30%,-200%);
+}
+/*sidebar*/
+.sidebar{ 
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  background-color: white;
+  right: 0px;
+  z-index:101;
+  width:0rem;
+  display:none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:3rem;
+  overflow: hidden;
+  transition:width 0.5s ease;
+}
+.sidebar.show{
+  width: 25rem;
+}
+.sidebar ul{
+  flex-direction: column;
+  gap: 2rem;
+}
 .home-section{
-  min-height:calc(70vh - 5rem);
   background-color: var(--bg-color);
+  margin-top: 5rem;
 }
 .bikes-section{
   min-height: 110vh;
@@ -117,10 +180,144 @@ ul li:hover{
 .destination-section-content,
 .reviews-section-content{
   flex: 1;
-  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+}
+.harley-title{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.harley-title > div{
+  margin: 1rem 0rem 1.5rem 0rem;
+  font-size: 5rem;
+  font-weight:500;
+  font-family:Racing sans one;
+  background-color: white;
+  line-height:1;
+}
+.home-bike-container{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.left-info-container{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+.box-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:0.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.box-info:nth-child(1),
+.box-info:nth-child(2){
+  padding:0rem 0rem 1rem 0rem;
+}
+.spec-info{
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.border-seperator{
+  border-bottom: 0.2rem solid var(--main-border);
+}
+.bike-image{
+  width: 100%;
+  max-width:60rem;
+}
+.helmet-container{
+  width: 100%;
+  max-width:10rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+}
+.helmet-container::after{
+  position: absolute;
+  top:30%;
+  content: '';
+  height:80%;
+  width: 140%;
+  border: 0.2rem solid var(--main-border);
+}
+.helmet-btn{
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--yellow-btn-color);
+  padding:0.2rem 0rem;
+  width:7.2rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  cursor: pointer;
+}
+.helmet-container img{
+  width: 100%;
+  object-fit:contain;
+  z-index: 2;
+}
+.helmet-image-container img{
+  width: 100%;
+  height: 100%;
+}
+.helmet-button{
+  display: flex;
+  align-items: center;
+  background-color:var(--yellow-btn-color);
+  width:8.7rem;
+  height: 2.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.helmet-button:hover{
+  filter: brightness(97%);
+}
+.home-btn-container{
+  display: flex;
+  justify-content: center;
+  gap:1.5rem;
+  height:3rem;
+  margin-bottom: 2rem;
+}
+.find-dealer-btn,
+.test-ride-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:0.5rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: none;
+}
+.find-dealer-btn{
+  background-color: var(--yellow-btn-color);
+  width:15rem;
+}
+.test-ride-btn{
+  background-color: white;
+  width: 13rem;
+}
+.find-dealer-btn:hover,
+.test-ride-btn:hover{
+  filter: brightness(97%);
+}
+.home-btn-container i{
+  font-size:1.8rem;
 }
 footer{
   min-height: 30vh;
@@ -129,4 +326,54 @@ footer{
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+/*media queries*/
+@media(max-width:900px){
+  .home-bike-container{
+    flex-direction: column;
+  }
+  .bike-image{
+    order: 1;
+  }
+  .left-info-container{
+    order: 2;
+  }
+  .helmet-container{
+    order: 3;
+    margin-bottom:4rem;
+  }
+}
+@media (min-width:480px) and (max-width:900px){
+  .left-info-container{
+    flex-direction:row;
+  }
+  .box-info:nth-child(1),
+  .box-info:nth-child(2){
+    padding:0rem 1rem 0rem 0rem;
+  }
+  .border-seperator{
+    border-bottom: none;
+    border-right: 0.2rem solid var(--main-border);
+  }
+}
+@media (max-width:600px){
+  .desktop-page-links,
+  .sign-up-btn-desktop{
+    display: none;
+  }
+  .hamburger-icon,
+  .sidebar{
+    display:flex;
+  }
+}
+@media (max-width:480px){
+  .harley-title > div{
+    font-size: 4rem;
+  }
+}
+@media (max-width:350px){
+  .harley-title > div{
+    font-size: 3.5rem;
+  }
 }
