@@ -8,8 +8,11 @@
   --main-color:rgb(255, 68, 36);
   --second-color:rgb(247, 114, 20);
   --main-border:rgb(234, 220, 209);
+  --text-alter-color:#868e96;
   --yellow-btn-color:rgb(255,231,37);
+  --container-color:#faeee4;
 }
+
 html{
   font-size: 62.5%;
 }
@@ -156,10 +159,6 @@ ul li:hover{
   background-color: var(--bg-color);
   margin-top: 5rem;
 }
-.bikes-section{
-  min-height: 110vh;
-  background-color: white;
-}
 .destination-section{
   min-height: 60vh;
   background-color: rgb(255, 247, 247);
@@ -183,6 +182,7 @@ ul li:hover{
   display: flex;
   flex-direction: column;
 }
+/* home section  */
 .harley-title{
   display: flex;
   align-items: center;
@@ -319,6 +319,140 @@ ul li:hover{
 .home-btn-container i{
   font-size:1.8rem;
 }
+/* bike section  */
+.bikes-section{
+  background-color:white;
+  padding:3rem 0rem;
+}
+.last-minute-text{
+  color: var(--second-color);
+}
+.bike-products-container{
+  margin-top:2rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:2.5rem;
+  cursor: default;
+}
+.bike-product-container{
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow:0px 0px 3px 0px rgba(0,0,0,0.3);
+  border-radius: 0.3rem;
+  transition: transform 0.15s ease;
+}
+.bike-product-container:hover{
+  transform: scale(1.01);
+}
+.free-cancellation-text{
+  color:var(--second-color);
+  font-weight: 500;
+  background-color:var(--container-color);
+  width: fit-content;
+  padding: 0.2rem 1rem;
+  border-radius: 100vw;
+  font-size: 1.3rem;
+}
+.bike-product-image{
+  width: 100%;
+  aspect-ratio: 1;
+  max-height:18rem;
+  object-fit: contain;
+}
+.bike-product-info-container{
+  display: flex;
+}
+.bike-product-info-container > div:nth-child(1){
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.bike-product-name{
+  font-size: 1.7rem;
+}
+.adventure-text{
+  color: var(--text-alter-color);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.bike-product-info-container > div:nth-child(2){
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.bike-rent-info-container{
+  display: flex;
+}
+.price{
+  color: var(--second-color);
+  font-weight:bold;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.time{
+  margin-top: auto;
+  font-size:1.2rem;
+  color: var(--text-alter-color);
+}
+.book-bike-btn{
+  border:none;
+  font-weight:bold;
+  color: white;
+  background-color: var(--second-color);
+  padding: 1rem 0rem;
+  margin-top: 1rem;
+  transition: filter 0.15s ease;
+  cursor: pointer;
+}
+.book-bike-btn:hover{
+  filter: brightness(97%);
+}
+.one-kind-text{
+  color: var(--second-color);
+  font-weight:bolder;
+  text-align:center;
+  margin-top:3rem;
+  font-size: 1.45rem;
+}
+.slogan-text{
+  text-align: center;
+}
+.bike-section-bottom-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:4rem;
+  justify-items: center;
+  margin-top:3rem;
+}
+.bike-section-bottom-container > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1.5rem;
+  cursor:default;
+  width: 100%;
+  max-width: 40rem;
+}
+.icon-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  font-size: 2.1rem;
+  background-color:var(--container-color);
+  border-radius: 50%;
+}
+.icon-container i{
+  color: var(--second-color);
+}
+.description-text{
+  text-align:center;
+  font-size: 1.43rem;
+}
 footer{
   min-height: 30vh;
   background-color: black;
@@ -327,8 +461,12 @@ footer{
   justify-content: center;
   color: white;
 }
-
 /*media queries*/
+@media (max-width:910px){
+  .bike-products-container{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
 @media(max-width:900px){
   .home-bike-container{
     flex-direction: column;
@@ -342,6 +480,12 @@ footer{
   .helmet-container{
     order: 3;
     margin-bottom:4rem;
+  }
+  .last-minute-text{
+    font-size: 1.5rem;
+  }
+  .rent-text{
+    font-size:2rem;
   }
 }
 @media (min-width:480px) and (max-width:900px){
@@ -357,6 +501,16 @@ footer{
     border-right: 0.2rem solid var(--main-border);
   }
 }
+@media (max-width:700px){
+  .bike-products-container{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width:675px){
+  .bike-section-bottom-container{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
 @media (max-width:600px){
   .desktop-page-links,
   .sign-up-btn-desktop{
@@ -366,10 +520,53 @@ footer{
   .sidebar{
     display:flex;
   }
+  .last-minute-text{
+    font-size: 1.3rem;
+  }
+  .rent-text{
+    font-size:1.8rem;
+  }
 }
 @media (max-width:480px){
   .harley-title > div{
     font-size: 4rem;
+  }
+  .bike-product-name{
+    font-size: 1.5rem;
+  }
+  .adventure-text,
+  .time{
+    font-size:1rem;
+  }
+  .price{
+    font-size: 1.6rem;
+  }
+}
+@media (max-width:440px){
+  .bike-product-name{
+    font-size: 1.3rem;
+  }
+  .adventure-text,
+  .time{
+    font-size:0.8rem;
+  }
+  .price{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width:400px){
+  .bike-products-container{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .bike-product-name{
+    font-size: 1.6rem;
+  }
+  .adventure-text,
+  .time{
+    font-size:1.1rem;
+  }
+  .price{
+    font-size: 1.8rem;
   }
 }
 @media (max-width:350px){
