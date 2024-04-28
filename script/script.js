@@ -1,6 +1,5 @@
 import { renderBikesHTML , bikes } from "./renderBikeHTML.js";
-
-let productPushed;
+import { sliderJS } from "./slider.js";
 
 //sidebar JS CODE
 const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -13,6 +12,9 @@ hamburgerIcon.addEventListener('click',()=>{
     sidebarEl.classList.add('show');
   }
 });
+
+//bikes section JS CODE
+let productPushed;
 
 renderBikesHTML();
 addANewProduct();
@@ -40,3 +42,6 @@ if(screenWidth < breakpointOne && screenWidth > breakpointTwo){
 }
 
 }
+
+//sliderJS code
+sliderJS();

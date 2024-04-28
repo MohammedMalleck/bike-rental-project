@@ -10,7 +10,7 @@
   --main-border:rgb(234, 220, 209);
   --text-alter-color:#868e96;
   --yellow-btn-color:rgb(255,231,37);
-  --container-color:#faeee4;
+  --container-color: rgb(255, 247, 247);
 }
 
 html{
@@ -158,14 +158,6 @@ ul li:hover{
 .home-section{
   background-color: var(--bg-color);
   margin-top: 5rem;
-}
-.destination-section{
-  min-height: 60vh;
-  background-color: rgb(255, 247, 247);
-}
-.reviews-section{
-  min-height: 50vh;
-  background-color: white;
 }
 .home-section,
 .bikes-section,
@@ -348,7 +340,7 @@ ul li:hover{
 .free-cancellation-text{
   color:var(--second-color);
   font-weight: 500;
-  background-color:var(--container-color);
+  background-color:var(--bg-color);
   width: fit-content;
   padding: 0.2rem 1rem;
   border-radius: 100vw;
@@ -443,7 +435,7 @@ ul li:hover{
   width: 4rem;
   aspect-ratio: 1;
   font-size: 2.1rem;
-  background-color:var(--container-color);
+  background-color:var(--bg-color);
   border-radius: 50%;
 }
 .icon-container i{
@@ -452,6 +444,149 @@ ul li:hover{
 .description-text{
   text-align:center;
   font-size: 1.43rem;
+}
+/* destination  */
+.destination-section{
+  background-color:var(--container-color);
+  padding:2rem 0rem 3rem 0rem;
+}
+.destination-section-content h4{
+  color: var(--second-color);
+}
+.destination-section-content h1{
+  margin-bottom:2.5rem;
+}
+.parent-container{
+  display:flex;
+  gap:2rem;
+  overflow-x:hidden; 
+  margin-bottom: 2rem;
+}
+.parent-container::-webkit-scrollbar{
+  display:none;
+}
+.child{
+  flex-shrink:0;
+  width:23.5%;
+  max-height:35rem;
+  display:flex;
+  transition:transform 0.3s ease , translate 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.child::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #000000aa 90%);
+}
+.child:hover{
+  translate: 0rem -0.5rem;
+}
+.child img{
+  width: 100%;
+  object-fit: cover;
+}
+.city-name-container{
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1rem;
+  color: white;
+  z-index: 1;
+}
+.city-name-container > div:nth-child(1){
+  font-weight:bold;
+  font-size: 1.4rem;
+}
+.city-name-container > div:nth-child(2){
+  font-size: 1.2rem;
+}
+.slide-info-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot-notation-container{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dot{
+  width: 0.6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color:rgb(160, 160, 160);
+  transition: transform 0.15s ease , background-color 0.15s ease;
+  cursor: pointer;
+}
+.active{
+  transform : scale(1.6);
+  background-color:rgb(65, 143, 246);
+}
+/* reviews section  */
+.reviews-section{
+  padding: 3rem 0rem 2rem 0rem;
+  background-color: white;
+}
+.testimonials-text{
+  text-align: center;
+  font-weight:bold;
+  font-size: 1.7rem;
+  color: var(--second-color);
+}
+.reviews-section-content h1{
+  text-align: center;
+  margin-bottom:4rem;
+}
+.reviews-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1.2rem;
+  justify-items: center;
+}
+.reviews-container > div{
+  display: flex;
+  flex-direction: column;
+  padding:2rem 1rem;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  border-radius: 0.3rem;
+  gap:1.5rem;
+  transition: scale 0.15s ease;
+  max-width:40rem;
+}
+.reviews-container > div:hover{
+  scale: 1.01;
+}
+.review-icon-container{
+  display: flex;
+  gap: 0.5rem;
+  font-size:2rem;
+  color: var(--yellow-btn-color);
+}
+.review-text{
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+}
+.review-user-container{
+  display: flex;
+  align-items: center;
+  gap:0.7rem;
+}
+.review-user-container img{
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.25rem solid var(--yellow-btn-color);
+}
+.review-user-info > div:nth-child(1){
+  font-weight:500;
+  font-size: 1.7rem;
+}
+.review-user-info > div:nth-child(2){
+  font-size: 1.35rem;
+  color: var(--text-alter-color);
 }
 footer{
   min-height: 30vh;
@@ -505,6 +640,9 @@ footer{
   .bike-products-container{
     grid-template-columns: repeat(2,1fr);
   }
+  .child{
+    width:50%;
+  }
 }
 @media (max-width:675px){
   .bike-section-bottom-container{
@@ -525,6 +663,16 @@ footer{
   }
   .rent-text{
     font-size:1.8rem;
+  }
+}
+@media (max-width:575px){
+  .reviews-container{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+@media (max-width:500px){
+  .child{
+    width:100%;
   }
 }
 @media (max-width:480px){
