@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-margin-top:50px;
 }
 :root{
   --bg-color:rgb(251,239,229);
@@ -79,7 +81,7 @@ ul li{
   cursor: pointer;
   transition: color 0.15s ease;
 }
-ul li:hover{
+ul li a:hover{
   color:var(--main-color);
 }
 .right-container{
