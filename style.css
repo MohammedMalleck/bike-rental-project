@@ -139,21 +139,23 @@ ul li:hover{
   background-color: white;
   right: 0px;
   z-index:101;
-  width:0rem;
+  width: 100%;
+  max-width:0rem;
   display:none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap:3rem;
   overflow: hidden;
-  transition:width 0.5s ease;
+  transition:max-width 0.5s ease;
 }
 .sidebar.show{
-  width: 25rem;
+  max-width:35rem;
 }
 .sidebar ul{
   flex-direction: column;
   gap: 2rem;
+  font-size: 1.45rem;
 }
 .home-section{
   background-color: var(--bg-color);
@@ -323,6 +325,7 @@ ul li:hover{
   margin-top:2rem;
   display: grid;
   grid-template-columns: repeat(4,1fr);
+  justify-items: center;
   gap:2.5rem;
   cursor: default;
 }
@@ -333,6 +336,8 @@ ul li:hover{
   box-shadow:0px 0px 3px 0px rgba(0,0,0,0.3);
   border-radius: 0.3rem;
   transition: transform 0.15s ease;
+  width: 100%;
+  max-width:28rem;
 }
 .bike-product-container:hover{
   transform: scale(1.01);
@@ -589,12 +594,73 @@ ul li:hover{
   color: var(--text-alter-color);
 }
 footer{
-  min-height: 30vh;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap:5rem;
+  color: white;
+  padding: 3rem 2rem;
+  cursor:default;
+}
+footer > div:nth-child(1){
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4,1fr);
+  gap:1.5rem;
+}
+.footer-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* background-color: blue; */
+}
+.site-name-footer{
+  font-size:1.55rem;
+  font-weight: 500;
+  border: 0.15rem solid var(--second-color);
+  width: fit-content;
+  padding: 0.1rem 0.2rem;
+}
+.slogan-footer{
+  font-size:1.5rem;
+}
+.footer-icons-container{
+  display: flex;
+  gap:1rem;
+}
+.footer-icon{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  width:2.8rem;
+  aspect-ratio: 1;
+  border: 0.12rem solid var(--text-alter-color);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.footer-box h3{
+  letter-spacing:0.15rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.65rem;
+}
+.footer-text{
+  font-size: 1.45rem;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.footer-text:hover{
+  filter: brightness(90%);
+}
+footer > div:nth-child(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+.bike-rent-llc{
+  font-size:1.4rem;
 }
 /*media queries*/
 @media (max-width:910px){
@@ -668,6 +734,10 @@ footer{
 @media (max-width:575px){
   .reviews-container{
     grid-template-columns: repeat(1,1fr);
+  }
+  footer > div:nth-child(1){
+    grid-template-columns: repeat(1,1fr);
+    justify-items: start;
   }
 }
 @media (max-width:500px){

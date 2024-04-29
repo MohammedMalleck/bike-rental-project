@@ -19,7 +19,6 @@ let intervalID;
 updateSlideValue();
 //add active class to DOT 
 addActiveClassToDOT();
-
 //auto play the slider
 autoPlay();
 
@@ -83,7 +82,8 @@ function renderDots(){
         const dotID = Number(dotEl.id);
         movedToLeft = dotID;
         scroll();
-        handleClickCondition();
+        isClicked= true;
+        changeClickedCondition();
       })
     })
 }
@@ -114,6 +114,17 @@ function scroll(){
     inLastSlide = false;
   }
 }
+function changeClickedCondition(){
+  //clear any previous timeout before you start
+  //a new one
+  if(intervalID){
+    clearTimeout(intervalID);
+  }
+  intervalID = setTimeout(()=>{
+    isClicked = false;
+    intervalID = false;
+  },1500);
+}
 function autoPlay(){
   setInterval(()=>{
     //if the user hasnt scrolled the slider 
@@ -128,21 +139,5 @@ function autoPlay(){
       }
     }
   },2000);
-}
-
-function handleClickCondition(){
-  isClicked= true;
-  changeClickedCondition();
-}
-function changeClickedCondition(){
-  //clear any previous timeout before you start
-  //a new one
-  if(intervalID){
-    clearTimeout(intervalID);
-  }
-  intervalID = setTimeout(()=>{
-    isClicked = false;
-    intervalID = false;
-  },1500);
 }
 }
