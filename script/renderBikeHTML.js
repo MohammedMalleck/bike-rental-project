@@ -34,7 +34,7 @@ bikes.forEach((bikeEl)=>{
 
   html += 
   `
-    <div class="bike-product-container">
+    <div style="--i:${bikeEl.id};" class="bike-product-container">
       <div class="free-cancellation-text">
         Free Cancellation
       </div>

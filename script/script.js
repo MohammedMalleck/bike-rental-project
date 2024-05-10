@@ -1,5 +1,6 @@
 import { renderBikesHTML , bikes } from "./renderBikeHTML.js";
 import { sliderJS } from "./slider.js";
+import { bikesObserver } from "./bikesObeserver.js";
 
 //sidebar JS CODE
 const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -45,3 +46,5 @@ if(screenWidth < breakpointOne && screenWidth > breakpointTwo){
 
 //sliderJS code
 sliderJS();
+//observer code
+bikesObserver();
