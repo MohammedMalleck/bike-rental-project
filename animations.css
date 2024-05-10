@@ -1,0 +1,42 @@
+/* observer styles */
+.bike-product-container.show{
+  animation: slide-bike 1s forwards ease;
+}
+.bike-product-container.show:nth-child(2),
+.bike-product-container.show:nth-child(6){
+  animation-delay: 0.3s;
+}
+.bike-product-container.show:nth-child(3),
+.bike-product-container.show:nth-child(7){
+  animation-delay: 0.6s;
+}
+.bike-product-container.show:nth-child(4),
+.bike-product-container.show:nth-child(8){
+  animation-delay: 0.9s;
+}
+/*key frames*/
+@keyframes slide-bike{
+  to{
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@media (max-width:800px){
+.bike-product-container.show:nth-child(2),
+.bike-product-container.show:nth-child(4),
+.bike-product-container.show:nth-child(6),
+.bike-product-container.show:nth-child(8){
+  animation-delay: 0.3s;
+}
+.bike-product-container.show:nth-child(3),
+.bike-product-container.show:nth-child(5),
+.bike-product-container.show:nth-child(7){
+  animation-delay: 0s;
+}
+}
+@media (max-width:675px){
+  .bike-product-container.show{
+    animation-delay: 0s;
+  }
+}

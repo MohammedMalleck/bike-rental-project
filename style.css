@@ -841,14 +841,3 @@ footer > div:nth-child(2){
     font-size: 3.5rem;
   }
 }
-/* observer styles */
-.bike-product-container.show{
-  animation: slide-bike 1s forwards ease;
-  animation-delay:calc(0.3s * var(--i));
-}
-@keyframes slide-bike{
-  to{
-    transform: translateX(0rem);
-    opacity: 1;
-  }
-}
