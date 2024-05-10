@@ -1,6 +1,7 @@
 import { renderBikesHTML } from "./renderBikeHTML.js";
 import { sliderJS } from "./slider.js";
 import { bikesObserver } from "./bikesObeserver.js";
+import { reviewsObserver } from "./reviewsObserver.js";
 
 //sidebar JS CODE
 const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -20,3 +21,4 @@ renderBikesHTML();
 sliderJS();
 //observer code
 bikesObserver();
+reviewsObserver();

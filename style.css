@@ -337,14 +337,14 @@ ul li a:hover{
   flex-direction: column;
   box-shadow:0px 0px 3px 0px rgba(0,0,0,0.3);
   border-radius: 0.3rem;
-  transition: transform 0.15s ease;
+  transition: scale 0.15s ease;
   width: 100%;
   max-width:28rem;
   transform: translateX(-10rem);
   opacity: 0;
 }
 .bike-product-container:hover{
-  transform: scale(1.01);
+   scale : 1.01;
 }
 .free-cancellation-text{
   color:var(--second-color);
@@ -561,6 +561,8 @@ ul li a:hover{
   gap:1.5rem;
   transition: scale 0.15s ease;
   max-width:40rem;
+  transform: translateX(-10rem);
+  opacity: 0;
 }
 .reviews-container > div:hover{
   scale: 1.01;
