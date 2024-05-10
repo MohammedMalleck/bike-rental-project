@@ -1,39 +1,34 @@
 //bike section JS CODE
-export let bikes = [
-  {
-    id : 1
-  },
-  {
-    id : 2
-  },
-  {
-    id : 3
-  },
-  {
-    id : 4
-  },
-  {
-    id : 5
-  },
-  {
-    id : 6
-  },
-  {
-    id : 7
-  },
-  {
-    id : 8
-  }
-];
 
 export function renderBikesHTML(){
+  const bikes = [
+    {
+      id : 1
+    },
+    {
+      id : 2
+    },
+    {
+      id : 3
+    },
+    {
+      id : 4
+    },
+    {
+      id : 5
+    },
+    {
+      id : 6
+    },
+    {
+      id : 7
+    },
+    {
+      id : 8
+    }
+  ];
 
-let html = '';
-
-bikes.forEach((bikeEl)=>{
-
-  html += 
-  `
+  document.querySelector('.bike-products-container').innerHTML = bikes.map((bikeEl)=>`
     <div style="--i:${bikeEl.id};" class="bike-product-container">
       <div class="free-cancellation-text">
         Free Cancellation
@@ -53,9 +48,5 @@ bikes.forEach((bikeEl)=>{
       </div>
       <button class="book-bike-btn">Book Bike</button>
     </div>
-  `;
-
-});
-
-document.querySelector('.bike-products-container').innerHTML = html;
+  `).join('\n');
 }

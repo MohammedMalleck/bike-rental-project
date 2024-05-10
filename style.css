@@ -340,6 +340,8 @@ ul li a:hover{
   transition: transform 0.15s ease;
   width: 100%;
   max-width:28rem;
+  transform: translateX(-10rem);
+  opacity: 0;
 }
 .bike-product-container:hover{
   transform: scale(1.01);
@@ -356,8 +358,6 @@ ul li a:hover{
 .bike-product-image{
   width: 100%;
   aspect-ratio: 1;
-  max-height:18rem;
-  object-fit: contain;
 }
 .bike-product-info-container{
   display: flex;
@@ -666,9 +666,18 @@ footer > div:nth-child(2){
 }
 /*media queries*/
 @media (max-width:910px){
-  .bike-products-container{
-    grid-template-columns: repeat(3,1fr);
-  }
+ .bike-product-name{
+  font-size: 1.5rem;
+ }
+ .adventure-text{
+  font-size: 1.15rem;
+ }
+ .price{
+  font-size: 1.7rem;
+ }
+ .time{
+  font-size: 1.1rem;
+ }
 }
 @media(max-width:900px){
   .home-bike-container{
@@ -691,6 +700,34 @@ footer > div:nth-child(2){
     font-size:2rem;
   }
 }
+@media(max-width:850px){
+  .bike-product-name{
+    font-size: 1.3rem;
+   }
+   .adventure-text{
+    font-size: 1.1rem;
+   }
+   .price{
+    font-size: 1.5rem;
+   }
+}
+@media (max-width:800px){
+  .bike-products-container{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .bike-product-name{
+    font-size: 1.8rem;
+   }
+   .adventure-text{
+    font-size: 1.3rem;
+   }
+   .price{
+    font-size:2.1rem;
+   }
+   .time{
+    font-size: 1.3rem;
+   }
+}
 @media (min-width:480px) and (max-width:900px){
   .left-info-container{
     flex-direction:row;
@@ -705,9 +742,6 @@ footer > div:nth-child(2){
   }
 }
 @media (max-width:700px){
-  .bike-products-container{
-    grid-template-columns: repeat(2,1fr);
-  }
   .child{
     width:50%;
   }
@@ -741,6 +775,17 @@ footer > div:nth-child(2){
     grid-template-columns: repeat(1,1fr);
     justify-items: start;
   }
+}
+@media (max-width:530px){
+  .bike-product-name{
+    font-size: 1.6rem;
+   }
+   .adventure-text{
+    font-size: 1.2rem;
+   }
+   .price{
+    font-size:1.8rem;
+   }
 }
 @media (max-width:500px){
   .child{
@@ -779,11 +824,13 @@ footer > div:nth-child(2){
     grid-template-columns: repeat(1,1fr);
   }
   .bike-product-name{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
-  .adventure-text,
+  .adventure-text{
+    font-size:1.3rem;
+  }
   .time{
-    font-size:1.1rem;
+    font-size: 1.2rem;
   }
   .price{
     font-size: 1.8rem;
@@ -795,10 +842,6 @@ footer > div:nth-child(2){
   }
 }
 /* observer styles */
-.bike-product-container{
-  transform: translateX(-10rem);
-  opacity: 0;
-}
 .bike-product-container.show{
   animation: slide-bike 1s forwards ease;
   animation-delay:calc(0.3s * var(--i));
